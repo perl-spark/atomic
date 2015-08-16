@@ -1,0 +1,4 @@
+lib/atomic.pm
+lib/atomic.xs
+Build.PL
+MANIFEST

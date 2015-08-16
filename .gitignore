@@ -1,0 +1,8 @@
+Build
+*.bak
+MYMETA.*
+_build
+blib
+atomic-*
+lib/*.c
+lib/*.o
