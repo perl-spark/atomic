@@ -2,14 +2,22 @@ use v5.14;
 use strict;
 use warnings;
 
+package atomic;
+
+use Try::Tiny;
+
 require Exporter;
-our @EXPORT = qw(compare_and_swap);
+our @EXPORT = qw(compare_and_swap swap);
 our @ISA = qw(Exporter);
 
 require XSLoader;
 our $VERSION = "0";
 
 XSLoader::load('atomic', $VERSION);
+
+# Exporter doesn't work properly with XSUBS
+sub compare_and_swap { _compare_and_swap(@_); }
+sub swap (&$) { _swap(@_); }
 
 1;
 __END__
